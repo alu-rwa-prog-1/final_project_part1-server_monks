@@ -5,6 +5,7 @@ from office_hours_tasks import Office_hours_tasks
 from extra_curricular_tasks import Extra_curricular_tasks
 from off_campus_tasks import Off_campus_tasks
 import datetime
+import sched, time
 
 
 print("""Hi, welcome to your to-do program. We care about your productivity.
@@ -113,9 +114,9 @@ while True:
                 else:
                     print('Invalid input')
                 break
-            else:
-                print('Invalid task ID!')
-                break
+            # else:
+            #     print('Invalid task ID!')
+            #     break
     print()
     other_task = input('Select another task? Yes/No ').lower()
     if other_task == 'yes':
@@ -123,3 +124,14 @@ while True:
     else:
         print('Have a productive day! Bye')
         break
+
+
+for k, v in my_tasks.items():
+    for k1, v1 in v.items():
+        def notification():
+            print(my_tasks[k][k1].task_name + ' due NOW! ')
+        seconds_to = (my_tasks[k][k1].due_date - datetime.datetime.now()).total_seconds()
+        notify = time.time() + seconds_to
+        s = sched.scheduler(time.time)
+        s.enterabs(notify, 1, notification)
+        s.run()
