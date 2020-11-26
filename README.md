@@ -1,3 +1,5 @@
+Authors: Catherine Muthoni and Liplan Lekipising 
+
 # To Do Program
 
 # Project Brief
@@ -16,7 +18,11 @@ freeze time. Install using
     pip install freezetime or pip3 install freezetime
 
 # Features
-
+Our To-do program will have the following features(methods):
+Edit_task - This method will allow the user to change the name or due date of their task.
+Mark_complete - This method will allow the user to mark their program as complete. After this, they will not be able to edit their task further
+Set_reminder - This method will let the user set a date when they should be reminded to do their task
+Check time remaining - This method allows the user to check the time remaining until when the task is due.
 
 # Code Example
 

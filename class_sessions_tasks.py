@@ -1,8 +1,10 @@
-from all_tasks import All_tasks
+# Authors: Catherine Muthoni and Liplan Lekipising
+
+from all_tasks import AllTasks
 import datetime
 
 
-class Class_sessions_tasks(All_tasks):
+class ClasssessionsTasks(AllTasks):
     def __init__(self, task_name, due_date, course, platform, facilitator, complete=False, creation_date=datetime.datetime.now(), reminder=None):
         super().__init__(task_name, due_date, complete=False, creation_date=datetime.datetime.now(), reminder=None)
         self.course = course
