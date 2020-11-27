@@ -11,9 +11,15 @@ Off Campus Tasks - These tasks are personal activities outside of school environ
 The program will seek to address the issue of time management among students so that they can prioritize their tasks. The program will also help students to never miss perform tasks because of the reminders. This will result in improved productivity. 
 
 # Requirements for running
-Before running the program successfully you need to have installed the following library:
-freeze time. Install using
-    'pip install freezegun or pip3 install freezegun'
+Before running the program successfully you need to have installed the following libraries:
+freeze time.
+schedule.
+Install using
+    '''
+    pip install freezegun or pip3 install freezegun
+    pip install schedule or pip3 install schedule
+    '''
+
 
 # Features
 The tasks are automatically assigned an ID starting at T100 when created. The ID is used in selecting the tasks. 

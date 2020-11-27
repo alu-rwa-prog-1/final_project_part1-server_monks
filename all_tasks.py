@@ -68,7 +68,7 @@ class All_tasks:
                     print('Sorry, reminder has to be after the creation date ')
                 else:
                     self.reminder = rem_dt
-                    print(f'Reminder set successfully for {self.name}')
+                    print(f'Reminder set successfully for {self.task_name}')
         except ValueError:
             print('Invalid Input. Follow this format YYYY/MM/DD H:M')
 
