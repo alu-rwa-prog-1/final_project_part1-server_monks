@@ -1,7 +1,9 @@
+# Authors: Catherine Muthoni and Liplan Lekipising
+
 import datetime
 
 
-class All_tasks:
+class AllTasks:
     def __init__(self, task_name, due_date, complete=False, creation_date=datetime.datetime.now(), reminder=None):
         """Holds all the variables for classes
 
@@ -28,7 +30,7 @@ class All_tasks:
         self.reminder = reminder
 
     def edit_task(self):
-        """This method is used to a task.
+        """This method is used to edit a task.
         Input (string): Task attribute such as task name
         Output: New attribute value
         """
@@ -37,21 +39,26 @@ class All_tasks:
             new_name = input('Enter the new task name: ')
             self.task_name = new_name
             print('Task Name changed successfully')
+            print()
 
         val2 = input('Would like to edit the due date? Yes/No ').lower()
+
         if val2 == 'yes':
             try:
                 new_date = input('Enter the new due date: YYYY/MM/DD HH:MM ')
                 self.due_date = datetime.datetime.strptime(new_date, '%Y/%m/%d %H:%M')
-                print('Task due date updated successully')
+                print('Task due date updated successfully')
+                print()
             except ValueError:
                 print('Invalid Input. Follow this format YYYY/MM/DD H:M')
+                print()
 
     def mark_complete(self):
         """Mark Complete
+        Change value to TRUE
         """
         self.complete = True
-        print(f'Great! {self.task_name} Task marked as complete')
+        print('Great! ' + str(self.task_name) + ' Task marked as complete')
 
     def set_reminder(self):
         """This method is used to set the reminder for a task
@@ -62,13 +69,13 @@ class All_tasks:
             reminder_input = input('Please the enter the date and time for reminder: YYYY/MM/DD H:M ')
             rem_dt = datetime.datetime.strptime(reminder_input, '%Y/%m/%d %H:%M')
             if rem_dt > self.due_date:
-                print('Sorry, reminder has to be set before due date ')
+                print(f'Sorry, reminder has to be set before due date ')
             else:
                 if rem_dt < self.creation_date:
                     print('Sorry, reminder has to be after the creation date ')
                 else:
                     self.reminder = rem_dt
-                    print(f'Reminder set successfully for {self.task_name}')
+                    print('Reminder set successfully for task: ' + self.task_name)
         except ValueError:
             print('Invalid Input. Follow this format YYYY/MM/DD H:M')
 
@@ -82,3 +89,15 @@ class All_tasks:
         minutes = (seconds % 3600) // 60
         print('Amount of time remaining for ' + self.task_name + ' is:')
         return str(hours) + ' hours ' + str(minutes) + ' minutes'
+
+    # def remove_task(self):
+    #     """This method is used to remove a task"""
+
+    #     self = None
+    #     print("Your task has been deleted")
+
+
+
+
+
+
