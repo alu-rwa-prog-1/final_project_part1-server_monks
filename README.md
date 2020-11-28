@@ -19,6 +19,7 @@ schedule.
 Install using
 """
     pip install freezegun or pip3 install freezegun
+    
     pip install schedule or pip3 install schedule
 """
 
